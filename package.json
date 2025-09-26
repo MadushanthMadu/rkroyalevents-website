@@ -20,7 +20,13 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start:staging": "env-cmd -f .env.staging npm start",
+    "start:production": "env-cmd -f .env.production npm start",
+    "build:staging": "env-cmd -f ./.env.staging npm run-script build",
+    "build:production": "env-cmd -f ./.env.production npm run-script build",
+    "deploy:staging": "npm run build:staging && firebase deploy -P staging",
+    "deploy:production": "npm run build:production && firebase deploy -P production"
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +45,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-keywords": "^5.1.0",
+    "env-cmd": "^10.1.0"
   }
 }
