@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet";
 import PoliciesLayout from '../sections/policies/policiesLayout';
+import termsAndConditionsData from '../data/policies/termsAndConditions.json';
 
 const TermsAndConditionsPage = () => {
     return (
@@ -10,7 +11,7 @@ const TermsAndConditionsPage = () => {
                 <meta name="keywords" content="Keywords separated with comma here..." />
             </Helmet>
 
-            <PoliciesLayout />
+            <PoliciesLayout json={termsAndConditionsData}/>
         </>
     );
 }

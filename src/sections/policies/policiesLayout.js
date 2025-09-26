@@ -1,7 +1,9 @@
-const PoliciesLayout = () => {
+const PoliciesLayout = ({
+    json
+}) => {
     return (
         <>
-            <h1>Policy Page</h1>
+            <h1>{json.title}</h1>
         </>
     );
 }
